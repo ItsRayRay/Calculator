@@ -59,4 +59,10 @@ header {
     min-height: 50px;
     border-radius: 10px;
     background-color: purple;
+    display: flex;
+    justify-content: center;
+}
+
+ .parent > div:hover {
+    background-color: rgb(114, 0, 129);
 }
