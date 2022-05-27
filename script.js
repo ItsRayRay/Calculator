@@ -1,8 +1,9 @@
 let firstInput = []
 let operatorInput = []
 
-let inputScreen = document.querySelector("#input__screen")
-let resultScreen = document.querySelector("#result__screen")
+let inputScreen = document.querySelector("#first__input")
+let operatorScreen = document.querySelector("#operator__input")
+let resultScreen = document.querySelector("#second__input")
 
 
  //-----------------------------------------------------
@@ -76,7 +77,7 @@ function renderOne () {
  function renderPlus () {
      
     operatorInput.push("+")
-    inputScreen.textContent =    operatorInput.join("")
+    operatorScreen.textContent =    operatorInput.join("")
 
 
     
@@ -86,7 +87,7 @@ function renderOne () {
  function renderMinus () {
      
     operatorInput.push("-")
-    inputScreen.textContent =    operatorInput.join("")
+    operatorScreen.textContent =    operatorInput.join("")
     
  }
 
@@ -94,7 +95,7 @@ function renderOne () {
  function renderDivide () {
      
     operatorInput.push("/")
-    inputScreen.textContent =    operatorInput.join("")
+    operatorScreen.textContent =    operatorInput.join("")
     
  }
 
@@ -102,7 +103,7 @@ function renderOne () {
  function renderDot () {
      
     operatorInput.push(".")
-    inputScreen.textContent =    operatorInput.join("")
+    operatorScreen.textContent =    operatorInput.join("")
     
  }
 
@@ -110,7 +111,7 @@ function renderOne () {
     function renderMultiply () {
 
         operatorInput.push("*")     
-        inputScreen.textContent =    operatorInput.join("")
+        operatorScreen.textContent =    operatorInput.join("")
     }
 
 
@@ -118,8 +119,8 @@ function renderOne () {
 
         operatorInput.push(" ")     
         inputScreen.textContent =  operatorInput.join("")
+        operatorScreen.textContent = ""
         operatorInput = []
-
         firstInput = []
 
     }
