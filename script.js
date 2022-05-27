@@ -1,9 +1,10 @@
-let firstInput = []
-let operatorInput = []
+let firstInput = []         // first input array
+let secondInput = []  // second input array
+let operatorInput = [] // operator input array
 
-let inputScreen = document.querySelector("#first__input")
-let operatorScreen = document.querySelector("#operator__input")
-let resultScreen = document.querySelector("#second__input")
+let inputScreen = document.querySelector("#first__input") // first input screen
+let operatorScreen = document.querySelector("#operator__input") // operator screen
+let resultScreen = document.querySelector("#second__input") // second input screen
 
 
  //-----------------------------------------------------
@@ -76,19 +77,38 @@ function renderOne () {
 
  function renderPlus () {
      
+    secondInput.push(inputScreen.textContent) // adds the current input to the second input array
+
+inputScreen.textContent = ""    // clears the input screen
+
+firstInput = []     // clears the first input array
+
     operatorInput.push("+")
     operatorScreen.textContent =    operatorInput.join("")
 
 
     
+
  }
 
 
  function renderMinus () {
-     
-    operatorInput.push("-")
-    operatorScreen.textContent =    operatorInput.join("")
+
+    if (operatorInput[0] === "+") { 
+
+        secondInput.push(inputScreen.textContent) // adds the current input to the second input array
+
+
+        inputScreen.textContent = parseInt(secondInput[0])  + parseInt(secondInput[1]) // adds the two inputs together
+
+             
+        operatorInput.push("-")
+         operatorScreen.textContent =   operatorInput.join("")       // adds the operator to the operator screen
     
+
+    }
+
+
  }
 
 
