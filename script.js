@@ -85,31 +85,36 @@ firstInput = []     // clears the first input array
 
     operatorInput.push("+")
     operatorScreen.textContent =    operatorInput.join("")
+    operatorInput.pop()
 
-
-    
 
  }
+
+
+
 
 
  function renderMinus () {
 
-    if (operatorInput[0] === "+") { 
 
-        secondInput.push(inputScreen.textContent) // adds the current input to the second input array
+   secondInput.push(inputScreen.textContent) // adds the current input to the second input array
 
+   inputScreen.textContent = ""    // clears the input screen
+   
+   firstInput = []     // clears the first input array
+   
+       operatorInput.push("-")
+       operatorScreen.textContent =    operatorInput.join("")
+       operatorInput.pop()
 
-        inputScreen.textContent = parseInt(secondInput[0])  + parseInt(secondInput[1]) // adds the two inputs together
-
-             
-        operatorInput.push("-")
-         operatorScreen.textContent =   operatorInput.join("")       // adds the operator to the operator screen
-    
-
+   
     }
+   
 
 
- }
+
+
+ 
 
 
  function renderDivide () {
