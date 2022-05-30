@@ -1,6 +1,6 @@
 let firstInput = []         // first input array
 let secondInput = []  // second input array
-let operatorInput = [] // operator input array
+let operatorInput = [""] // operator input array
 
 let inputScreen = document.querySelector("#first__input") // first input screen
 let operatorScreen = document.querySelector("#operator__input") // operator screen
@@ -70,73 +70,77 @@ function renderOne () {
     
  }
 
+ function renderDot () {
+     
+   firstInput.push(".")
+   inputScreen.textContent =    firstInput.join("")
+   
+}
+
  //-----------------------------------------------------
 
 //
  //-----------------------------------------------------
 
  function renderPlus () {
-     
+
+
     secondInput.push(inputScreen.textContent) // adds the current input to the second input array
 
-inputScreen.textContent = ""    // clears the input screen
+   inputScreen.textContent = ""    // clears the input screen
 
-firstInput = []     // clears the first input array
+   firstInput = []     // clears the first input array
 
-    operatorInput.push("+")
-    operatorScreen.textContent =    operatorInput.join("")
-    operatorInput.pop()
+    operatorInput.unshift("+")
+    operatorScreen.textContent =  operatorInput[0]
 
 
  }
-
-
-
 
 
  function renderMinus () {
 
-
    secondInput.push(inputScreen.textContent) // adds the current input to the second input array
 
    inputScreen.textContent = ""    // clears the input screen
-   
-   firstInput = []     // clears the first input array
-   
-       operatorInput.push("-")
-       operatorScreen.textContent =    operatorInput.join("")
-       operatorInput.pop()
 
-   
+   firstInput = []     // clears the first input array
+
+    operatorInput.unshift("-")
+    operatorScreen.textContent =  operatorInput[0]
+
+
     }
    
 
 
-
-
- 
-
-
  function renderDivide () {
      
-    operatorInput.push("/")
-    operatorScreen.textContent =    operatorInput.join("")
-    
+   secondInput.push(inputScreen.textContent) // adds the current input to the second input array
+
+   inputScreen.textContent = ""    // clears the input screen
+
+   firstInput = []     // clears the first input array
+
+    operatorInput.unshift("/")
+    operatorScreen.textContent =  operatorInput[0]
+
  }
 
 
- function renderDot () {
-     
-    operatorInput.push(".")
-    operatorScreen.textContent =    operatorInput.join("")
-    
- }
 
 
     function renderMultiply () {
 
-        operatorInput.push("*")     
-        operatorScreen.textContent =    operatorInput.join("")
+      secondInput.push(inputScreen.textContent) // adds the current input to the second input array
+
+      inputScreen.textContent = ""    // clears the input screen
+   
+      firstInput = []     // clears the first input array
+   
+       operatorInput.unshift("x")
+       operatorScreen.textContent =  operatorInput[0]
+   
     }
 
 
@@ -147,8 +151,51 @@ firstInput = []     // clears the first input array
         operatorScreen.textContent = ""
         operatorInput = []
         firstInput = []
+        secondInput = []
+
 
     }
+
+
+    function renderIsEqual () {
+
+
+      if (operatorInput[0] === "+") {
+         secondInput.push(inputScreen.textContent)
+         inputScreen.textContent = parseInt(secondInput[0])  + parseInt(secondInput[1])
+         firstInput = []
+         operatorInput = [""]
+         secondInput = []
+         operatorScreen.textContent = ""
+     
+      } else if (operatorInput[0] === "-") {
+         secondInput.push(inputScreen.textContent)
+         inputScreen.textContent = parseInt(secondInput[0])  - parseInt(secondInput[1])
+         firstInput = []
+         operatorInput = [""]
+         secondInput = []
+         operatorScreen.textContent = ""
+     
+      } else if (operatorInput[0] === "x") {
+         secondInput.push(inputScreen.textContent)
+         inputScreen.textContent = parseInt(secondInput[0]) * parseInt(secondInput[1])
+         firstInput = []
+         operatorInput = [""]
+         secondInput = []
+         operatorScreen.textContent = ""
+     
+      } else if (operatorInput[0] === "/") {
+         secondInput.push(inputScreen.textContent)
+         inputScreen.textContent = parseInt(secondInput[0]) / parseInt(secondInput[1])
+         firstInput = []
+         operatorInput = [""]
+         secondInput = []
+         operatorScreen.textContent = ""
+     
+      }
+  }
+
+
 
     function renderDelete () {
 
