@@ -7,6 +7,3 @@ One of the challenges of this project was that it was not allowed to save data o
 
 Despite this challenge, I was able to successfully create a functional calculator that users can use to perform simple calculations. The interface is designed to be user-friendly and intuitive, with buttons for each arithmetic operation and a display screen that shows the input and output values.
 
-Overall, this project helped me to further develop my skills in HTML, CSS, and JavaScript. Feel free to check out the calculator and try it out for yourself!
-
-https://itsrayray.github.io/Calculator/  
